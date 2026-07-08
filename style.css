@@ -1,0 +1,219 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Inter,sans-serif;
+}
+
+body{
+
+background:#000;
+
+color:white;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+height:100vh;
+
+}
+
+.container{
+
+width:600px;
+
+background:#111;
+
+padding:40px;
+
+border-radius:24px;
+
+border:1px solid #222;
+
+}
+
+h1{
+
+font-size:42px;
+
+margin-bottom:8px;
+
+}
+
+p{
+
+color:#777;
+
+margin-bottom:40px;
+
+}
+
+.search{
+
+display:flex;
+
+gap:12px;
+
+}
+
+input{
+
+flex:1;
+
+padding:16px;
+
+border-radius:14px;
+
+background:#181818;
+
+border:1px solid #333;
+
+color:white;
+
+font-size:16px;
+
+}
+
+button{
+
+padding:16px 28px;
+
+border-radius:14px;
+
+border:none;
+
+background:white;
+
+color:black;
+
+font-weight:bold;
+
+cursor:pointer;
+
+}
+
+button:hover{
+
+opacity:.9;
+
+}
+
+#result{
+
+margin-top:40px;
+
+padding:24px;
+
+border:1px solid #222;
+
+border-radius:18px;
+
+min-height:180px;
+
+}
+
+.placeholder{
+
+color:#666;
+
+}
+
+.mail{
+
+background:#111;
+
+border-radius:18px;
+
+padding:20px;
+
+}
+
+.emailBody{
+
+margin-top:20px;
+
+background:white;
+
+color:black;
+
+padding:20px;
+
+border-radius:12px;
+
+max-height:700px;
+
+overflow:auto;
+
+}
+
+.emailBody img{
+
+max-width:100%;
+
+height:auto;
+
+}
+
+.emailBody a{
+
+color:#2563eb;
+
+word-break:break-word;
+
+}
+
+.mail{
+    background:#111;
+    border-radius:18px;
+    padding:20px;
+}
+
+.emailBody{
+    margin-top:20px;
+    background:white;
+    color:black;
+    padding:20px;
+    border-radius:12px;
+    max-height:650px;
+    overflow:auto;
+}
+
+.emailBody img{
+    max-width:100%;
+}
+
+.emailBody a{
+    color:#2563eb;
+}
+
+.otpBox{
+    text-align:center;
+    margin:20px 0;
+}
+
+.otpBox h1{
+    font-size:52px;
+    margin:15px 0;
+}
+
+.loading{
+    text-align:center;
+    padding:40px;
+}
+.loader {
+    width:40px;
+    height:40px;
+    border:3px solid #333;
+    border-top:3px solid white;
+    border-radius:50%;
+    animation:spin .8s linear infinite;
+}
+
+@keyframes spin{
+to{
+transform:rotate(360deg);
+}
+}
