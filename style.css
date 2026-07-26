@@ -1,403 +1,276 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Inter,sans-serif;
-}
-
-body{
-
-background:#000;
-
-color:white;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-height:100vh;
-
-}
-
-.container{
-
-width:600px;
-
-background:#111;
-
-padding:40px;
-
-border-radius:24px;
-
-border:1px solid #222;
-
-}
-
-h1{
-
-font-size:42px;
-
-margin-bottom:8px;
-
-}
-
-p{
-
-color:#777;
-
-margin-bottom:40px;
-
-}
-
-.search{
-
-display:flex;
-
-gap:12px;
-
-}
-
-input{
-
-flex:1;
-
-padding:16px;
-
-border-radius:14px;
-
-background:#181818;
-
-border:1px solid #333;
-
-color:white;
-
-font-size:16px;
-
-}
-
-button{
-
-padding:16px 28px;
-
-border-radius:14px;
-
-border:none;
-
-background:white;
-
-color:black;
-
-font-weight:bold;
-
-cursor:pointer;
-
-}
-
-button:hover{
-
-opacity:.9;
-
-}
-
-#result{
-
-margin-top:40px;
-
-padding:24px;
-
-border:1px solid #222;
-
-border-radius:18px;
-
-min-height:180px;
-
-}
-
-.placeholder{
-
-color:#666;
-
-}
-
-.mail{
-
-background:#111;
-
-border-radius:18px;
-
-padding:20px;
-
-}
-
-.emailBody{
-
-margin-top:20px;
-
-background:white;
-
-color:black;
-
-padding:20px;
-
-border-radius:12px;
-
-max-height:700px;
-
-overflow:auto;
-
-}
-
-.emailBody img{
-
-max-width:100%;
-
-height:auto;
-
-}
-
-.emailBody a{
-
-color:#2563eb;
-
-word-break:break-word;
-
-}
-
-.mail{
-    background:#111;
-    border-radius:18px;
-    padding:20px;
-}
-
-.emailBody{
-    margin-top:20px;
-    background:white;
-    color:black;
-    padding:20px;
-    border-radius:12px;
-    max-height:650px;
-    overflow:auto;
-}
-
-.emailBody img{
-    max-width:100%;
-}
-
-.emailBody a{
-    color:#2563eb;
-}
-
-.otpBox{
-    text-align:center;
-    margin:20px 0;
-}
-
-.otpBox h1{
-    font-size:52px;
-    margin:15px 0;
-}
-
-.loading{
-    text-align:center;
-    padding:40px;
-}
-.loader {
-    width:40px;
-    height:40px;
-    border:3px solid #333;
-    border-top:3px solid white;
-    border-radius:50%;
-    animation:spin .8s linear infinite;
-}
-
-@keyframes spin{
-to{
-transform:rotate(360deg);
-}
-}
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
 }
 
 body {
-    background: #000;
-    color: white;
+    background: radial-gradient(circle at top, #2c2c2e, #0f0f11);
+    color: #f5f5f7;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    padding: 20px;
 }
 
-.container {
-    width: 600px;
-    background: #111;
-    padding: 40px;
-    border-radius: 24px;
-    border: 1px solid #222;
+/* macOS Window Container */
+.window {
+    width: 100%;
+    max-width: 680px;
+    background: rgba(30, 30, 32, 0.85);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+/* macOS Window Header Bar */
+.window-header {
+    height: 38px;
+    background: rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 14px;
+    user-select: none;
+}
+
+.traffic-lights {
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.dot.close { background: #ff5f56; border: 0.5px solid #e0443e; }
+.dot.minimize { background: #ffbd2e; border: 0.5px solid #dea123; }
+.dot.maximize { background: #27c93f; border: 0.5px solid #1aab29; }
+
+.window-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: #a1a1a6;
+}
+
+.header-spacer {
+    width: 52px; /* Mirrors traffic lights width for centering title */
+}
+
+.window-content {
+    padding: 32px;
 }
 
 .hidden {
     display: none !important;
 }
 
+/* Auth View */
+.auth-box {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.app-icon {
+    width: 72px;
+    height: 72px;
+    margin-bottom: 12px;
+    filter: drop-shadow(0 8px 16px rgba(0,0,0,0.4));
+}
+
 h1 {
-    font-size: 38px;
-    margin-bottom: 8px;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    margin-bottom: 6px;
 }
 
 p {
-    color: #777;
-    margin-bottom: 30px;
+    font-size: 14px;
+    color: #86868b;
+    margin-bottom: 24px;
 }
 
-/* PIN Auth Styling */
-.auth-box {
-    text-align: center;
-}
-
+/* PIN Controls */
 .pin-container {
     display: flex;
     justify-content: center;
-    gap: 12px;
-    margin: 24px 0;
+    gap: 10px;
+    margin-bottom: 24px;
 }
 
 .pin-digit {
-    width: 50px;
-    height: 60px;
+    width: 48px;
+    height: 56px;
     text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    border-radius: 12px;
-    background: #181818;
-    border: 1px solid #333;
+    font-size: 22px;
+    font-weight: 600;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     color: #fff;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .pin-digit:focus {
-    border-color: #555;
     outline: none;
+    border-color: #0071e3;
+    box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Buttons */
+.apple-btn {
+    padding: 10px 22px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.apple-btn.primary {
+    background: #0071e3;
+    color: #ffffff;
+}
+
+.apple-btn.primary:hover {
+    background: #0077ed;
+    box-shadow: 0 4px 12px rgba(0, 113, 227, 0.3);
+}
+
+.apple-btn.primary:active {
+    transform: scale(0.98);
 }
 
 .auth-error {
-    color: #ff4d4d;
-    margin-top: 12px;
-    font-size: 14px;
+    color: #ff453a;
+    font-size: 13px;
+    margin-top: 14px;
 }
 
-/* Search & Layout */
-.search {
+/* Toolbar & Search Bar */
+.search-bar {
     display: flex;
-    gap: 12px;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 4px 6px 4px 12px;
+    gap: 8px;
+    transition: border-color 0.2s;
 }
 
-input {
+.search-bar:focus-within {
+    border-color: #0071e3;
+    box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.25);
+}
+
+.search-icon {
+    color: #86868b;
+}
+
+input#searchInput {
     flex: 1;
-    padding: 16px;
-    border-radius: 14px;
-    background: #181818;
-    border: 1px solid #333;
-    color: white;
-    font-size: 16px;
-}
-
-button {
-    padding: 16px 28px;
-    border-radius: 14px;
+    background: transparent;
     border: none;
-    background: white;
-    color: black;
-    font-weight: bold;
-    cursor: pointer;
-    transition: opacity 0.2s;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
 }
 
-button:hover {
-    opacity: 0.9;
+input#searchInput::placeholder {
+    color: #6e6e73;
 }
 
-#result {
-    margin-top: 30px;
-    padding: 24px;
-    border: 1px solid #222;
-    border-radius: 18px;
-    min-height: 180px;
+/* Mail Result Box */
+.mail-pane {
+    margin-top: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    min-height: 240px;
+    padding: 20px;
 }
 
 .placeholder {
-    color: #666;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    gap: 12px;
 }
 
-.mail {
-    background: #111;
-    border-radius: 18px;
+.placeholder p {
+    margin-bottom: 0;
+    color: #6e6e73;
 }
 
-/* Formatting for rendered HTML email */
+/* Formatting Rendered Content */
 .emailBody {
-    margin-top: 20px;
+    margin-top: 16px;
     background: #ffffff;
-    color: #222222;
+    color: #1d1d1f;
     padding: 20px;
-    border-radius: 12px;
-    max-height: 650px;
+    border-radius: 8px;
+    max-height: 480px;
     overflow-y: auto;
-    font-size: 15px;
-    line-height: 1.6;
-}
-
-.emailBody img {
-    max-width: 100%;
-    height: auto;
+    font-size: 14px;
+    line-height: 1.5;
 }
 
 .emailBody a {
-    color: #2563eb;
-    word-break: break-all;
+    color: #0066cc;
 }
 
-/* Actions Box */
+/* Action Banner */
 .actionBox {
     text-align: center;
-    margin: 20px 0;
+    margin: 16px 0;
     padding: 16px;
-    background: #181818;
-    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .actionBox h1 {
-    font-size: 40px;
-    margin: 10px 0;
-    letter-spacing: 4px;
+    font-size: 32px;
+    letter-spacing: 3px;
+    color: #2997ff;
+    margin: 8px 0;
 }
 
 .action-buttons {
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin-top: 10px;
+    margin-top: 12px;
 }
 
-/* Loading Spinner */
+/* Spinner */
 .loading {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px;
+    padding: 60px 0;
 }
 
 .loader {
-    width: 40px;
-    height: 40px;
-    border: 3px solid #333;
-    border-top: 3px solid white;
+    width: 30px;
+    height: 30px;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-top: 3px solid #0071e3;
     border-radius: 50%;
     animation: spin 0.8s linear infinite;
 }
