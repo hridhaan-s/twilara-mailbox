@@ -4,43 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Twilara Mail</title>
+    <link rel="icon" type="image/png" href="https://img.icons8.com/3d-fluency/94/mail.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
-
-    <div id="authView" class="auth-box">
-        <h1>Twilara Mail</h1>
-        <p>Enter 4-digit PIN to access mailbox</p>
-        
-        <div class="pin-container">
-            <input type="password" maxlength="1" class="pin-digit" autofocus>
-            <input type="password" maxlength="1" class="pin-digit">
-            <input type="password" maxlength="1" class="pin-digit">
-            <input type="password" maxlength="1" class="pin-digit">
+<div class="window">
+    <div class="window-header">
+        <div class="traffic-lights">
+            <span class="dot close"></span>
+            <span class="dot minimize"></span>
+            <span class="dot maximize"></span>
         </div>
-
-        <button id="unlockBtn">Unlock Mailbox</button>
-        <div id="authError" class="auth-error"></div>
+        <div class="window-title">Twilara Mail</div>
+        <div class="header-spacer"></div>
     </div>
 
-    <div id="appView" class="app-content hidden">
-        <h1>Twilara Mail</h1>
-        <p>A Temp-Mail Service for the Twilara Hack Club.</p>
+    <div class="window-content">
+        
+        <div id="authView" class="auth-box">
+            <div class="app-icon-wrapper">
+                <img src="https://img.icons8.com/3d-fluency/94/mail.png" alt="Mail Icon" class="app-icon">
+            </div>
+            <h1>Unlock Mailbox</h1>
+            <p>Enter your 4-digit PIN to proceed</p>
+            
+            <div class="pin-container">
+                <input type="password" maxlength="1" class="pin-digit" autofocus>
+                <input type="password" maxlength="1" class="pin-digit">
+                <input type="password" maxlength="1" class="pin-digit">
+                <input type="password" maxlength="1" class="pin-digit">
+            </div>
 
-        <div class="search">
-            <input id="searchInput" placeholder="Search name or email">
-            <button id="searchButton">Search</button>
+            <button id="unlockBtn" class="apple-btn primary">Unlock</button>
+            <div id="authError" class="auth-error"></div>
         </div>
 
-        <div id="result">
-            <div class="placeholder">
-                No email searched yet.
+        <div id="appView" class="app-content hidden">
+            <div class="toolbar">
+                <div class="search-bar">
+                    <svg class="search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input id="searchInput" placeholder="Search mailbox or enter handle...">
+                    <button id="searchButton" class="apple-btn primary">Fetch</button>
+                </div>
+            </div>
+
+            <div id="result" class="mail-pane">
+                <div class="placeholder">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#444" stroke-width="1.5">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    <p>No messages loaded yet</p>
+                </div>
             </div>
         </div>
-    </div>
 
+    </div>
 </div>
 
 <script src="script.js"></script>
