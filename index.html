@@ -1,53 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Twilara Mail</title>
-<favicon href="assets/istockphoto-2234010214-612x612.jpg" type="image/x-icon">
-<link rel="stylesheet" href="style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twilara Mail</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <div class="container">
 
-<h1>Twilara Mail</h1>
+    <div id="authView" class="auth-box">
+        <h1>Twilara Mail</h1>
+        <p>Enter 4-digit PIN to access mailbox</p>
+        
+        <div class="pin-container">
+            <input type="password" maxlength="1" class="pin-digit" autofocus>
+            <input type="password" maxlength="1" class="pin-digit">
+            <input type="password" maxlength="1" class="pin-digit">
+            <input type="password" maxlength="1" class="pin-digit">
+        </div>
 
-<p>
-A Temp-Mail Service for the Twilara Hack Club.
-</p>
+        <button id="unlockBtn">Unlock Mailbox</button>
+        <div id="authError" class="auth-error"></div>
+    </div>
 
-<div class="search">
+    <div id="appView" class="app-content hidden">
+        <h1>Twilara Mail</h1>
+        <p>A Temp-Mail Service for the Twilara Hack Club.</p>
 
-<input
-id="searchInput"
-placeholder="Search name or email">
+        <div class="search">
+            <input id="searchInput" placeholder="Search name or email">
+            <button id="searchButton">Search</button>
+        </div>
 
-<button id="searchButton">
-
-Search
-
-</button>
-
-</div>
-
-<div id="result">
-
-<div class="placeholder">
-
-No email searched yet.
-
-</div>
-
-</div>
+        <div id="result">
+            <div class="placeholder">
+                No email searched yet.
+            </div>
+        </div>
+    </div>
 
 </div>
 
 <script src="script.js"></script>
-
 </body>
 </html>
