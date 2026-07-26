@@ -217,3 +217,191 @@ to{
 transform:rotate(360deg);
 }
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: #000;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 600px;
+    background: #111;
+    padding: 40px;
+    border-radius: 24px;
+    border: 1px solid #222;
+}
+
+.hidden {
+    display: none !important;
+}
+
+h1 {
+    font-size: 38px;
+    margin-bottom: 8px;
+}
+
+p {
+    color: #777;
+    margin-bottom: 30px;
+}
+
+/* PIN Auth Styling */
+.auth-box {
+    text-align: center;
+}
+
+.pin-container {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 24px 0;
+}
+
+.pin-digit {
+    width: 50px;
+    height: 60px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 12px;
+    background: #181818;
+    border: 1px solid #333;
+    color: #fff;
+}
+
+.pin-digit:focus {
+    border-color: #555;
+    outline: none;
+}
+
+.auth-error {
+    color: #ff4d4d;
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+/* Search & Layout */
+.search {
+    display: flex;
+    gap: 12px;
+}
+
+input {
+    flex: 1;
+    padding: 16px;
+    border-radius: 14px;
+    background: #181818;
+    border: 1px solid #333;
+    color: white;
+    font-size: 16px;
+}
+
+button {
+    padding: 16px 28px;
+    border-radius: 14px;
+    border: none;
+    background: white;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+#result {
+    margin-top: 30px;
+    padding: 24px;
+    border: 1px solid #222;
+    border-radius: 18px;
+    min-height: 180px;
+}
+
+.placeholder {
+    color: #666;
+    text-align: center;
+}
+
+.mail {
+    background: #111;
+    border-radius: 18px;
+}
+
+/* Formatting for rendered HTML email */
+.emailBody {
+    margin-top: 20px;
+    background: #ffffff;
+    color: #222222;
+    padding: 20px;
+    border-radius: 12px;
+    max-height: 650px;
+    overflow-y: auto;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.emailBody img {
+    max-width: 100%;
+    height: auto;
+}
+
+.emailBody a {
+    color: #2563eb;
+    word-break: break-all;
+}
+
+/* Actions Box */
+.actionBox {
+    text-align: center;
+    margin: 20px 0;
+    padding: 16px;
+    background: #181818;
+    border-radius: 12px;
+}
+
+.actionBox h1 {
+    font-size: 40px;
+    margin: 10px 0;
+    letter-spacing: 4px;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Loading Spinner */
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.loader {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #333;
+    border-top: 3px solid white;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
